@@ -3,6 +3,28 @@ guid: 231db623b89024fafb4d97ca8b3bedda
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: Reference_Cube
+    100004: roof1
+    100006: shed1
+    400000: //RootNode
+    400002: Reference_Cube
+    400004: roof1
+    400006: shed1
+    2100000: unnamed
+    2100002: None__shed-roof_png
+    2100004: None__wood_png
+    2300000: Reference_Cube
+    2300002: roof1
+    2300004: shed1
+    3300000: Reference_Cube
+    3300002: roof1
+    3300004: shed1
+    4300000: roof1
+    4300002: shed1
+    4300004: Reference_Cube
+    7400000: Default Take
+    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -57,7 +79,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
