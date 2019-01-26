@@ -7,22 +7,27 @@ ModelImporter:
     100002: Reference_Cube
     100004: roof1
     100006: shed1
+    100008: ShedNoDoor
     400000: //RootNode
     400002: Reference_Cube
     400004: roof1
     400006: shed1
+    400008: ShedNoDoor
     2100000: unnamed
     2100002: None__shed-roof_png
     2100004: None__wood_png
     2300000: Reference_Cube
     2300002: roof1
     2300004: shed1
+    2300006: ShedNoDoor
     3300000: Reference_Cube
     3300002: roof1
     3300004: shed1
+    3300006: ShedNoDoor
     4300000: roof1
     4300002: shed1
     4300004: Reference_Cube
+    4300006: ShedNoDoor
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
