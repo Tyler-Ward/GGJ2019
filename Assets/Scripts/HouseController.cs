@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HouseController : MonoBehaviour
 {
+    public GameObject MeshObj;
     private Dictionary<Vector3Int, int> occupancyGrid = new Dictionary<Vector3Int, int>();
     //0 = empty space
     //1 = unoccupied adjacent cube
@@ -87,11 +88,11 @@ public class HouseController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int x = 0; x < 6; x++)
+        for(int x = 0; x < 2; x++)
         {
-            for (int y = 0; y < 6; y++)
+            for (int y = 0; y < 2; y++)
             {
-                for (int z = 0; z < 6; z++)
+                for (int z = 0; z < 2; z++)
                 {
                     AddBlockToGrid(x, y, z);
                 }
@@ -100,7 +101,7 @@ public class HouseController : MonoBehaviour
 
         for (int x = -9; x < 10; x++)
         {
-            for (int y = -9; y < 10; y++)
+            for (int y = 0; y < 10; y++)
             {
                 for (int z = -9; z < 10; z++)
                 {
@@ -109,8 +110,11 @@ public class HouseController : MonoBehaviour
                     if(occupancy == 1)
                     {
                         GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        obj.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 0.5f);
-                        obj.transform.position = new Vector3(x, y, z);
+                        obj.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 0.25f);
+                        obj.GetComponent<Renderer>().material.shader = Shader.Find("Legacy Shaders/Transparent/Bumped Diffuse");
+                        obj.GetComponent<Collider>().enabled = false;
+                        obj.transform.parent = MeshObj.transform;
+                        obj.transform.position = new Vector3(x, y+0.5f, z);
                     }
                 }
             }

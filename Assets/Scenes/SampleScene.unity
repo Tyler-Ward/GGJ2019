@@ -373,13 +373,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5405e6ec66c2543939d74fd3ed4f8869, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5405e6ec66c2543939d74fd3ed4f8869, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5405e6ec66c2543939d74fd3ed4f8869, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5405e6ec66c2543939d74fd3ed4f8869, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.33000004
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5405e6ec66c2543939d74fd3ed4f8869, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1388,9 +1396,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1896332859}
-  - component: {fileID: 1896332858}
   - component: {fileID: 1896332860}
   - component: {fileID: 1896332862}
+  - component: {fileID: 1896332858}
   m_Layer: 0
   m_Name: Player0
   m_TagString: Untagged
@@ -1405,11 +1413,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896332857}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6115cf8daafaa47a2baf1134976bdc5b, type: 3}
+  m_Script: {fileID: 11500000, guid: ae669ab076d5f4a42937c185139a81db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeshObj: {fileID: 1934680909}
 --- !u!4 &1896332859
 Transform:
   m_ObjectHideFlags: 0
