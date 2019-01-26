@@ -13,11 +13,12 @@ public class PartSpawner : MonoBehaviour
 
     public float sizeVariance;
 
-    private System.Random random = new System.Random();
+    private System.Random random = new System.Random(System.DateTime.Now.Millisecond);
 
     // Start is called before the first frame update
     void Start()
     {
+        random = new System.Random(System.DateTime.Now.Millisecond);
         int numTrees = random.Next(frequency - variance, frequency + variance);
         MeshCollider areaCollision = spawnArea.GetComponent<MeshCollider>();
 
@@ -30,6 +31,10 @@ public class PartSpawner : MonoBehaviour
                 max.y,
                 min.z + (float)random.NextDouble() * (max.z - min.z)
             );
+
+            Ray ray = new Ray(position, new Vector3(0, -1, 0));
+            RaycastHit[] casts = Physics.RaycastAll(ray);
+            position = casts[0].point;
 
             GameObject candidate = Instantiate<GameObject>(spawnCandidate, position, Quaternion.Euler(-90, 0, 0));
             candidate.transform.localScale *= 1 + (float)(random.NextDouble() - 0.5) * sizeVariance;
