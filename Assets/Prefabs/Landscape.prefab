@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnArea: {fileID: 1380941070345759270}
-  spawnCandidate: {fileID: 1380941069300682881, guid: e68b5a0452c68514d9d53aa348f53edf,
+  spawnCandidate: {fileID: 4611045601864408376, guid: e68b5a0452c68514d9d53aa348f53edf,
     type: 3}
   frequency: 100
   variance: 3
