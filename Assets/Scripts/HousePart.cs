@@ -2,31 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct HousePartType
-{
-    public float xsize;
-    public float ysize;
-    public float zsize;
-    public GameObject model;
-    public bool[] faces;
-}
-
 public class HousePart : MonoBehaviour
 {
-    public float xpos;
-    public float ypos;
-    public float zpos;
-    public HousePartType part;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float xsize = 1;
+    public float ysize = 1;
+    public float zsize = 1;
+    public float xpos = 0;
+    public float ypos = 0;
+    public float zpos = 0;
+    public bool[] faces = {false, true, false, false, false, false}; //up down left right front back
 }
