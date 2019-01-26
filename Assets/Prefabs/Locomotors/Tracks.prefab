@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 725635544449363993}
   - component: {fileID: 2793081265780626953}
   - component: {fileID: 1008629540997199290}
+  - component: {fileID: 3811377752611932652}
   m_Layer: 0
   m_Name: Tracks
   m_TagString: Untagged
@@ -86,6 +87,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3811377752611932652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866496702026860298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf42ff160429d44caaa2dcc102eb945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A: {fileID: 8271900559281930990}
+  B: {fileID: 3441939643900239319}
+  C: {fileID: 8773422546080057847}
+  collisionBox: {fileID: 2793081265780626953}
+  startActive: 1
 --- !u!1 &2653396944692529524
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,7 +4940,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
-  m_Emitting: 1
+  m_Emitting: 0
 --- !u!1 &8249176546389902199
 GameObject:
   m_ObjectHideFlags: 0
@@ -5048,7 +5066,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
-  m_Emitting: 1
+  m_Emitting: 0
 --- !u!1001 &3387786436358781499
 PrefabInstance:
   m_ObjectHideFlags: 0
