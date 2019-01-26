@@ -20,6 +20,13 @@ public class GameController : MonoBehaviour
         Player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
+    public void EndGame()
+    {
+        Debug.Log("END GAME");
+        Menu.SetActive(true);
+        GameRunning = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,9 +41,19 @@ public class GameController : MonoBehaviour
             resourceManager.Fuel -= 0.025f;
             if (resourceManager.Fuel <= 0)
             {
-                Debug.Log("END GAME");
-                Menu.SetActive(true);
-                GameRunning = false;
+                EndGame();
+            }
+
+            Debug.Log(Vector3.Dot(Player.transform.up, Vector3.down));
+            if(Vector3.Dot(Player.transform.up, Vector3.down) > 0)
+            {
+                EndGame();
+            }
+            
+
+            if(Player.transform.position.y<-2)
+            {
+                EndGame();
             }
         }
     }
