@@ -12,6 +12,8 @@ public class HouseController : MonoBehaviour
     //2 = contains part
     private List<Vector3Int> freeSpaces = new List<Vector3Int>();
 
+    public AudioSource pickupSound;
+
     public bool GridContainsPart(int x, int y, int z)
     {
         Vector3Int key = new Vector3Int(x, y, z);
@@ -42,6 +44,8 @@ public class HouseController : MonoBehaviour
 
     public void AddBlockToGrid(int x, int y, int z, bool[] adjacencies)
     {
+        pickupSound.Play();
+
         if (GridContainsPart(x, y, z))
         {
             Debug.Log("overwriting part at " + new Vector3Int(x, y, z));

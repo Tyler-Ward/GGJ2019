@@ -15,9 +15,14 @@ public class PlayerController : MonoBehaviour
     private float CurrentSpeed = 0;
     private float CurrentTurn = 0;
 
+    public AudioSource engineSound;
+    public float maxVolume = 1.0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        engineSound.loop = true;
+        engineSound.Play();
     }
 
     void FixedUpdate()
@@ -56,6 +61,8 @@ public class PlayerController : MonoBehaviour
             CurrentSpeed = MaxSpeed;
         if (CurrentSpeed < -MaxSpeed)
             CurrentSpeed = -MaxSpeed;
+
+        engineSound.volume = Mathf.Abs(CurrentSpeed / MaxSpeed) * maxVolume;
 
         Vector3 movement = transform.forward * CurrentSpeed * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
