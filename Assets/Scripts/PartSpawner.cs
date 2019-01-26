@@ -57,7 +57,7 @@ public class PartSpawner : MonoBehaviour
 
             if (position.y > 0)
             {
-                GameObject clone = Instantiate<GameObject>(getRandomCandidate(), position, Quaternion.Euler(-90, 0, 0));
+                GameObject clone = Instantiate<GameObject>(getRandomCandidate(), position, Quaternion.identity/*Quaternion.Euler(-90, 0, 0)*/);
                 clone.transform.localScale *= 1 + (float)(random.NextDouble() - 0.5) * sizeVariance;
 
                 objects.Add(clone);

@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &279296488
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -204,8 +204,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0abc1f5af6b69074687f82d39893167f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   mapWidth: 256
   mapHeight: 256
   seed: 0
@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5c08b06285f3984f810e98115d3d373, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   Menu: {fileID: 538594250}
   Menu2: {fileID: 960719394}
   resourceManager: {fileID: 1267669156}
@@ -362,8 +362,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   spawnCandidates:
   - prefab: {fileID: 1058446724, guid: 1bc95fc3545ec204d9c622b960773a93, type: 3}
     weight: 5
@@ -375,7 +375,7 @@ MonoBehaviour:
   - prefab: {fileID: 8498563744576686543, guid: 13fb5fa744ab7fd498d233d65a234dfd,
       type: 3}
     weight: 1
-  - prefab: {fileID: 4611045601864408376, guid: e68b5a0452c68514d9d53aa348f53edf,
+  - prefab: {fileID: 3109597899399740611, guid: ea3f73d09d17e9c4db89dc76d6077abf,
       type: 3}
     weight: 100
   spawnArea: {fileID: 352576347}
@@ -738,8 +738,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84cf465d51c131b4184ba72cddd3df24, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   Fuel: 0
   FuelSlider: {fileID: 276493820}
 --- !u!4 &1267669157
@@ -766,8 +766,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1761449785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,11 +1108,11 @@ PrefabInstance:
     - target: {fileID: 3420729111428336745, guid: 030a4535feb89044eaa07aacdf14ee5e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value:
+      value: 
       objectReference: {fileID: 605906789}
     - target: {fileID: 1183432243, guid: 030a4535feb89044eaa07aacdf14ee5e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value:
+      value: 
       objectReference: {fileID: 605906789}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 030a4535feb89044eaa07aacdf14ee5e, type: 3}
@@ -1183,21 +1183,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
+        type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 1221210696}
     - target: {fileID: 6159028415735177030, guid: 9574fa1a749387e44abdf046758443c3,
         type: 3}
       propertyPath: resources
-      value:
+      value: 
       objectReference: {fileID: 1267669156}
     - target: {fileID: 6159028415735177030, guid: 9574fa1a749387e44abdf046758443c3,
         type: 3}
       propertyPath: engineSound
-      value:
+      value: 
       objectReference: {fileID: 809398979}
-    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
-        type: 3}
-      propertyPath: pickupSound
-      value:
-      objectReference: {fileID: 1221210696}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9574fa1a749387e44abdf046758443c3, type: 3}
 --- !u!114 &8178281097022454074 stripped
@@ -1210,5 +1210,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae669ab076d5f4a42937c185139a81db, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
