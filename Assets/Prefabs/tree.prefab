@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169590a7caea902449b9387f2fb79cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourceManager: {fileID: 0}
+  fuelAmount: 10
   sound: {fileID: 2913262944250188123}
 --- !u!95 &4611045601873768184
 Animator:
@@ -122,7 +124,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4611045601864408376}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e25b96ad644e9e48ad819b4793cb5c0, type: 3}
   m_Name: 

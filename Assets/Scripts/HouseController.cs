@@ -14,6 +14,13 @@ public class HouseController : MonoBehaviour
 
 	public AudioSource pickupSound;
 
+    public void EmptyGrid()
+    {
+        occupancyGrid = new Dictionary<Vector3Int, int>();
+        freeSpaces = new List<Vector3Int>();
+        MakeDefaultHouse();
+    }
+
     public int GetScore()
     {
         return occupancyGrid.Count;
@@ -124,12 +131,17 @@ public class HouseController : MonoBehaviour
         }
     }
 
-    void Start()
+    void MakeDefaultHouse()
     {
         bool[] bools = { false, false, true, true, true, true };
         AddBlockToGrid(0, 0, 0, bools);
         bool[] lbools = { false, false, false, false, false, false };
-        AddBlockToGrid(0,-1,0,lbools);
+        AddBlockToGrid(0, -1, 0, lbools);
+    }
+
+    void Start()
+    {
+        MakeDefaultHouse();
         //ShowFreeSpaces();
     }
 

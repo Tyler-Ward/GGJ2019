@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
         {
             partSpawners[i].DestroyObjects();
             partSpawners[i].SpawnObjects();
+            houseController.EmptyGrid();
         }
     }
 
