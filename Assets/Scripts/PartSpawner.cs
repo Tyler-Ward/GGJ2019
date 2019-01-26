@@ -16,8 +16,16 @@ public class PartSpawner : MonoBehaviour
     private System.Random random = new System.Random(System.DateTime.Now.Millisecond);
     public List<GameObject> objects = new List<GameObject>();
 
-    // Start is called before the first frame update
-    void Start()
+    public void DestroyObjects()
+    {
+        for(int i = 0; i < objects.Count; i++)
+        {
+            Destroy(objects[i]);
+        }
+        objects.Clear();
+    }
+
+    public void SpawnObjects()
     {
         random = new System.Random(System.DateTime.Now.Millisecond);
         int numTrees = random.Next(frequency - variance, frequency + variance);
@@ -37,7 +45,7 @@ public class PartSpawner : MonoBehaviour
             RaycastHit[] casts = Physics.RaycastAll(ray);
             position = casts[0].point;
 
-            if(position.y > 0)
+            if (position.y > 0)
             {
                 GameObject candidate = Instantiate<GameObject>(spawnCandidate, position, Quaternion.Euler(-90, 0, 0));
                 candidate.transform.localScale *= 1 + (float)(random.NextDouble() - 0.5) * sizeVariance;
@@ -46,9 +54,8 @@ public class PartSpawner : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-
+        SpawnObjects();
     }
 }

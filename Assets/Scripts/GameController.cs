@@ -22,6 +22,12 @@ public class GameController : MonoBehaviour
         GameRunning = true;
         Player.transform.position = startPosition;
         Player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        PartSpawner[] partSpawners = gameObject.GetComponents<PartSpawner>();
+        for (int i = 0; i < partSpawners.Length; i++)
+        {
+            partSpawners[i].DestroyObjects();
+            partSpawners[i].SpawnObjects();
+        }
     }
 
     public void EndGame()
