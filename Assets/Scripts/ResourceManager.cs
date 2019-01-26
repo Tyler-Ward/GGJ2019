@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
 {
-	public int Fuel;
+	public float Fuel;
 	public Slider FuelSlider;
 
 
