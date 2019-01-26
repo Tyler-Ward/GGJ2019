@@ -6,6 +6,7 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         public float speed = 10f;
+        public float turnSpeed = 2f;
         public float horizontalDragFactor = 1f;
         public float jumpForce = 1f;
         public float gravityMultiplier = 1f;
@@ -32,91 +33,26 @@ namespace Player
         {
             if(CameraObj.activeSelf)
             {
-                if (fly)
-                {
-                    NoClipCameraPosition();
-                }
-                else
-                {
-                    RigidBodyCameraPosition();
-                }
+                RigidBodyCameraPosition();
             }
-        }
-
-        void Update()
-        {
-            if (CameraObj.activeSelf)
-            {
-                CameraRotation();
-            }
-        }
-
-        void NoClipCameraPosition()
-        {
-            pos = Vector3.zero;
-
-            if (Input.GetKey(KeyCode.W))
-            {
-                pos.x += Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
-                pos.z += Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                pos.x += -Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
-                pos.z += -Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                pos.x += -Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
-                pos.z += Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                pos.x += Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
-                pos.z += -Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
-            }
-            if (Input.GetKey(KeyCode.LeftShift)) pos.y = -speed;
-            if (Input.GetKey(KeyCode.Space)) pos.y = speed;
-
-            transform.Translate(transform.InverseTransformVector(pos * Time.fixedDeltaTime));
-        }
-
-        void CameraRotation()
-        {
-            rot = new Vector2(rot.x + Input.GetAxis("Mouse X") * 3, rot.y + Input.GetAxis("Mouse Y") * 3);
-
-            if (rot.y < -90)
-            {
-                rot.y = -90;
-            }
-            if (rot.y > 90)
-            {
-                rot.y = 90;
-            }
-
-            MeshObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up);
-            CameraMountObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up) * Quaternion.AngleAxis(rot.y, Vector3.left);
-
-            // transform.position += transform.forward * 3 * Input.GetAxis("Vertical");
-            // transform.position += transform.right * 3 * Input.GetAxis("Horizontal");
         }
 
         void RigidBodyCameraPosition()
         {
             pos = Vector3.zero;
 
-            float inputh = Input.GetAxis("Horizontal");
             float inputv = Input.GetAxis("Vertical");
             if (inputv != 0)
             {
                 pos.x += Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed * inputv;
                 pos.z += Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed * inputv;
             }
-            if (inputh != 0)
-            {
-                pos.x += -Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed * -inputh;
-                pos.z += Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed * -inputh;
-            }
+
+            float inputh = Input.GetAxis("Horizontal");
+            rot = new Vector2(rot.x + inputh * turnSpeed, 0);
+
+            MeshObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up);
+            CameraMountObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up);
 
             /*if (Input.GetKey(KeyCode.W))
             {

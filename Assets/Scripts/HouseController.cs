@@ -85,7 +85,6 @@ public class HouseController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         for(int x = 0; x < 1; x++)
@@ -121,8 +120,7 @@ public class HouseController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }
