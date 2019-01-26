@@ -1,12 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static System.Random;
 
 public class PartSpawner : MonoBehaviour
 {
+    [Serializable]
+    public struct WeightedSpawn
+    {
+        public GameObject prefab;
+        public float weight;
+    }
+    public List<WeightedSpawn> spawnCandidates;
+
     public Collider spawnArea;
-    public GameObject spawnCandidate;
 
     public int frequency;
     public int variance;
@@ -14,7 +22,9 @@ public class PartSpawner : MonoBehaviour
     public float sizeVariance;
 
     private System.Random random = new System.Random(System.DateTime.Now.Millisecond);
-    public List<GameObject> objects = new List<GameObject>();
+    private List<GameObject> objects = new List<GameObject>();
+
+    private float weightTotal;
 
     public void DestroyObjects()
     {
@@ -47,15 +57,38 @@ public class PartSpawner : MonoBehaviour
 
             if (position.y > 0)
             {
-                GameObject candidate = Instantiate<GameObject>(spawnCandidate, position, Quaternion.Euler(-90, 0, 0));
-                candidate.transform.localScale *= 1 + (float)(random.NextDouble() - 0.5) * sizeVariance;
-                objects.Add(candidate);
+                GameObject clone = Instantiate<GameObject>(getRandomCandidate(), position, Quaternion.Euler(-90, 0, 0));
+                clone.transform.localScale *= 1 + (float)(random.NextDouble() - 0.5) * sizeVariance;
+
+                objects.Add(clone);
             }
         }
     }
 
+    private GameObject getRandomCandidate()
+    {
+        float factor = (float)random.NextDouble() * weightTotal;
+        float weightAccum = 0;
+
+        foreach(WeightedSpawn candidate in spawnCandidates)
+        {
+            weightAccum += candidate.weight;
+            if(factor < weightAccum)
+            {
+                return candidate.prefab;
+            }
+        }
+        return null;
+    }
+
     private void Start()
     {
+        weightTotal = 0;
+        foreach (WeightedSpawn candidate in spawnCandidates)
+        {
+            weightTotal += candidate.weight;
+        }
+
         SpawnObjects();
     }
 }

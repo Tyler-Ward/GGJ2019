@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -281,10 +281,6 @@ GameObject:
   - component: {fileID: 605906790}
   - component: {fileID: 605906789}
   - component: {fileID: 605906793}
-  - component: {fileID: 605906792}
-  - component: {fileID: 605906791}
-  - component: {fileID: 605906794}
-  - component: {fileID: 605906795}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -329,43 +325,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &605906791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605906788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnArea: {fileID: 352576347}
-  spawnCandidate: {fileID: 1581334155, guid: af90d312af639dc46a1fb087e4bfdbb0, type: 3}
-  frequency: 500
-  variance: 300
-  sizeVariance: 0
-  objects: []
---- !u!114 &605906792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605906788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnArea: {fileID: 352576347}
-  spawnCandidate: {fileID: 5403954581123877056, guid: ab42b5bd26c3f1c409d736fb17de5ee6,
-    type: 3}
-  frequency: 500
-  variance: 300
-  sizeVariance: 0
-  objects: []
 --- !u!114 &605906793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,50 +337,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnCandidates:
+  - prefab: {fileID: 1058446724, guid: 1bc95fc3545ec204d9c622b960773a93, type: 3}
+    weight: 5
+  - prefab: {fileID: 5403954581123877056, guid: ab42b5bd26c3f1c409d736fb17de5ee6,
+      type: 3}
+    weight: 5
+  - prefab: {fileID: 1581334155, guid: af90d312af639dc46a1fb087e4bfdbb0, type: 3}
+    weight: 5
+  - prefab: {fileID: 8498563744576686543, guid: 13fb5fa744ab7fd498d233d65a234dfd,
+      type: 3}
+    weight: 1
+  - prefab: {fileID: 4611045601864408376, guid: e68b5a0452c68514d9d53aa348f53edf,
+      type: 3}
+    weight: 100
   spawnArea: {fileID: 352576347}
-  spawnCandidate: {fileID: 1058446724, guid: 1bc95fc3545ec204d9c622b960773a93, type: 3}
-  frequency: 500
+  frequency: 5000
   variance: 300
   sizeVariance: 0
-  objects: []
---- !u!114 &605906794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605906788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnArea: {fileID: 352576347}
-  spawnCandidate: {fileID: 3701599220195438013, guid: 7c2e35c981613c34daedaef80e2f177b,
-    type: 3}
-  frequency: 500
-  variance: 300
-  sizeVariance: 0
-  objects: []
---- !u!114 &605906795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605906788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnArea: {fileID: 352576347}
-  spawnCandidate: {fileID: 4611045601864408376, guid: e68b5a0452c68514d9d53aa348f53edf,
-    type: 3}
-  frequency: 2000
-  variance: 3
-  sizeVariance: 0.8
-  objects: []
 --- !u!1 &809398978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1343,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
+        type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 212766739}
+    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
+        type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 1221210696}
     - target: {fileID: 6159028415735177030, guid: 9574fa1a749387e44abdf046758443c3,
         type: 3}
       propertyPath: resources
@@ -1450,16 +1393,6 @@ PrefabInstance:
       propertyPath: maxVolume
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
-        type: 3}
-      propertyPath: collider
-      value: 
-      objectReference: {fileID: 212766739}
-    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
-        type: 3}
-      propertyPath: pickupSound
-      value: 
-      objectReference: {fileID: 1221210696}
     - target: {fileID: 8178281097619124039, guid: 9574fa1a749387e44abdf046758443c3,
         type: 3}
       propertyPath: m_IsActive
