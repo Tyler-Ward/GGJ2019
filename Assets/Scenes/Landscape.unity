@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 605906792}
   - component: {fileID: 605906791}
   - component: {fileID: 605906794}
+  - component: {fileID: 605906795}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -426,6 +427,7 @@ MonoBehaviour:
   frequency: 500
   variance: 300
   sizeVariance: 0
+  objects: []
 --- !u!114 &605906792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +446,7 @@ MonoBehaviour:
   frequency: 500
   variance: 300
   sizeVariance: 0
+  objects: []
 --- !u!114 &605906793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,6 +464,7 @@ MonoBehaviour:
   frequency: 500
   variance: 300
   sizeVariance: 0
+  objects: []
 --- !u!114 &605906794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +483,26 @@ MonoBehaviour:
   frequency: 500
   variance: 300
   sizeVariance: 0
+  objects: []
+--- !u!114 &605906795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605906788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnArea: {fileID: 352576347}
+  spawnCandidate: {fileID: 4611045601864408376, guid: e68b5a0452c68514d9d53aa348f53edf,
+    type: 3}
+  frequency: 2000
+  variance: 3
+  sizeVariance: 0.8
+  objects: []
 --- !u!224 &764044270 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3420729111784229932, guid: 030a4535feb89044eaa07aacdf14ee5e,
@@ -1581,6 +1605,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2451983490909892301, guid: 28699504de6e5e04c8a364d5a44cdc40,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1380941070759136775, guid: 28699504de6e5e04c8a364d5a44cdc40,
         type: 3}
       propertyPath: m_IsActive
@@ -2017,6 +2046,11 @@ PrefabInstance:
       propertyPath: pickupSound
       value: 
       objectReference: {fileID: 1221210696}
+    - target: {fileID: 8178281097619124037, guid: 9574fa1a749387e44abdf046758443c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9574fa1a749387e44abdf046758443c3, type: 3}
 --- !u!114 &8178281097022454074 stripped

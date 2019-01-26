@@ -14,6 +14,7 @@ public class PartSpawner : MonoBehaviour
     public float sizeVariance;
 
     private System.Random random = new System.Random(System.DateTime.Now.Millisecond);
+    public List<GameObject> objects = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +37,12 @@ public class PartSpawner : MonoBehaviour
             RaycastHit[] casts = Physics.RaycastAll(ray);
             position = casts[0].point;
 
-            GameObject candidate = Instantiate<GameObject>(spawnCandidate, position, Quaternion.Euler(-90, 0, 0));
-            candidate.transform.localScale *= 1 + (float)(random.NextDouble() - 0.5) * sizeVariance;
+            if(position.y > 0)
+            {
+                GameObject candidate = Instantiate<GameObject>(spawnCandidate, position, Quaternion.Euler(-90, 0, 0));
+                candidate.transform.localScale *= 1 + (float)(random.NextDouble() - 0.5) * sizeVariance;
+                objects.Add(candidate);
+            }
         }
     }
 

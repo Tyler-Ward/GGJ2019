@@ -14,6 +14,7 @@ public class TreeSpawner : MonoBehaviour
     public float sizeVariance;
 
     private System.Random random = new System.Random();
+    public List<GameObject> objects = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class TreeSpawner : MonoBehaviour
 
             GameObject candidate = Instantiate<GameObject>(spawnCandidate, position, Quaternion.Euler(-90, 0, 0));
             candidate.transform.localScale *= 1 + (float)(random.NextDouble() - 0.5) * sizeVariance;
+            objects.Add(candidate);
         }
     }
 
