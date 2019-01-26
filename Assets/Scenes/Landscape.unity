@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!65 &212766739 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8178281097619089888, guid: 9574fa1a749387e44abdf046758443c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8178281097022454073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &276493820 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3420729111176868439, guid: 030a4535feb89044eaa07aacdf14ee5e,
@@ -899,5 +905,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
+        type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 212766739}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9574fa1a749387e44abdf046758443c3, type: 3}

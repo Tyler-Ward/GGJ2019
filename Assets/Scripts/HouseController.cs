@@ -117,7 +117,7 @@ public class HouseController : MonoBehaviour
 
     void Start()
     {
-        bool[] bools = { true, false, true, true, true, true };
+        bool[] bools = { false, false, true, true, true, true };
         AddBlockToGrid(0, 0, 0, bools);
         //ShowFreeSpaces();
     }
