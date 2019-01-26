@@ -310,7 +310,7 @@ public class HouseController : MonoBehaviour
                     Destroy(collision.gameObject);
                 }
                 //Debug.Log("collected house part: " + collision.gameObject.name);
-                ShowFreeSpaces();
+                //ShowFreeSpaces();
             }
         }
     }
