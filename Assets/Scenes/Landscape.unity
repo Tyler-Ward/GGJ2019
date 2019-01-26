@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -386,11 +386,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnArea: {fileID: 1996131589}
+  spawnArea: {fileID: 352576347}
   spawnCandidate: {fileID: 3701599220195438013, guid: 7c2e35c981613c34daedaef80e2f177b,
     type: 3}
-  frequency: 7
-  variance: 3
+  frequency: 500
+  variance: 300
   sizeVariance: 0
 --- !u!1 &1053408245
 GameObject:
@@ -757,7 +757,7 @@ PrefabInstance:
     - target: {fileID: 7161852660152116772, guid: 28699504de6e5e04c8a364d5a44cdc40,
         type: 3}
       propertyPath: frequency
-      value: 10000
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28699504de6e5e04c8a364d5a44cdc40, type: 3}
@@ -1002,15 +1002,15 @@ PrefabInstance:
       propertyPath: MaxTurnSpeed
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
-        type: 3}
-      propertyPath: collider
-      value: 
-      objectReference: {fileID: 212766739}
     - target: {fileID: 8178281097619124039, guid: 9574fa1a749387e44abdf046758443c3,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
+        type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 212766739}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9574fa1a749387e44abdf046758443c3, type: 3}
