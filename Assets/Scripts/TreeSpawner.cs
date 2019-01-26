@@ -6,10 +6,12 @@ using static System.Random;
 public class TreeSpawner : MonoBehaviour
 {
     public Collider spawnArea;
-    public Object spawnCandidate;
+    public GameObject spawnCandidate;
 
     public int frequency;
     public int variance;
+
+    public float sizeVariance;
 
     private System.Random random = new System.Random();
 
@@ -29,7 +31,8 @@ public class TreeSpawner : MonoBehaviour
                 min.z + (float)random.NextDouble() * (max.z - min.z)
             );
 
-            Instantiate(spawnCandidate, position, Quaternion.Euler(-90, 0, 0));
+            GameObject candidate = Instantiate<GameObject>(spawnCandidate, position, Quaternion.Euler(-90, 0, 0));
+            candidate.transform.localScale *= 1 + (float)(random.NextDouble() - 0.5) * sizeVariance;
         }
     }
 

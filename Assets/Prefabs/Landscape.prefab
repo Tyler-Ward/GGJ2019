@@ -94,6 +94,7 @@ MonoBehaviour:
     type: 3}
   frequency: 100
   variance: 3
+  sizeVariance: 0.8
 --- !u!1001 &1380941070759168167
 PrefabInstance:
   m_ObjectHideFlags: 0
