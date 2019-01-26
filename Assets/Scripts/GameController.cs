@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public GameObject Menu;
     public ResourceManager resourceManager;
     public GameObject Player;
+    public Vector3 startPosition;
     public bool GameRunning;
 
     public void StartGame ()
@@ -15,7 +16,7 @@ public class GameController : MonoBehaviour
         Menu.SetActive(false);
         resourceManager.Fuel = 75;
         GameRunning = true;
-        Player.transform.position = new Vector3(0, 5, 0);
+        Player.transform.position = startPosition;
         Player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
