@@ -9,12 +9,16 @@ ModelImporter:
     100006: Foot
     100008: Leg
     100010: //RootNode
+    100012: Hip
+    100014: Knee
     400000: Armature
     400002: Bone
     400004: Bone_001
     400006: Foot
     400008: Leg
     400010: //RootNode
+    400012: Hip
+    400014: Knee
     2100000: unnamed
     2300000: Foot
     2300002: Leg
@@ -23,7 +27,10 @@ ModelImporter:
     4300000: Foot
     4300002: Leg
     7400000: Default Take
+    7400002: ArmatureAction_001
     9500000: //RootNode
+    13700000: Foot
+    13700002: Leg
   externalObjects: {}
   materials:
     importMaterials: 1

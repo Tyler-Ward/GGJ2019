@@ -88,11 +88,11 @@ public class HouseController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int x = 0; x < 2; x++)
+        for(int x = 0; x < 1; x++)
         {
-            for (int y = 0; y < 2; y++)
+            for (int y = 0; y < 1; y++)
             {
-                for (int z = 0; z < 2; z++)
+                for (int z = 0; z < 1; z++)
                 {
                     AddBlockToGrid(x, y, z);
                 }

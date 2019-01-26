@@ -105,7 +105,20 @@ namespace Player
         {
             pos = Vector3.zero;
 
-            if (Input.GetKey(KeyCode.W))
+            float inputh = Input.GetAxis("Horizontal");
+            float inputv = Input.GetAxis("Vertical");
+            if (inputv != 0)
+            {
+                pos.x += Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed * inputv;
+                pos.z += Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed * inputv;
+            }
+            if (inputh != 0)
+            {
+                pos.x += -Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed * -inputh;
+                pos.z += Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed * -inputh;
+            }
+
+            /*if (Input.GetKey(KeyCode.W))
             {
                 pos.x += Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
                 pos.z += Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
@@ -124,7 +137,7 @@ namespace Player
             {
                 pos.x += Mathf.Cos(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
                 pos.z += -Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
-            }
+            }*/
             //if (Input.GetKey(KeyCode.LeftShift)) {}
             if (Input.GetKey(KeyCode.Space))
             {
