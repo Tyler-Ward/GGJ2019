@@ -12,8 +12,14 @@ public class TreeDropper : MonoBehaviour
 
         if(casts.Length > 0)
         {
-            transform.position = casts[0].point;
-            if (transform.position.y < 0) Destroy(this); // bye!
+            if (casts[0].point.y < 0)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                transform.position = casts[0].point;
+            }
         }
     }
 
