@@ -76,7 +76,7 @@ public class HouseController : MonoBehaviour
                 freeSpaces.Add(new Vector3Int(x, y + 1, z));
             }
         }
-        if (!GridContainsPart(x, y - 1, z) && adjacencies[1])
+        if (!GridContainsPart(x, y - 1, z) && y >= 1 && adjacencies[1])
         {
             occupancyGrid[new Vector3Int(x, y - 1, z)] = 1;
             if (!freeSpaces.Contains(new Vector3Int(x, y - 1, z)))
@@ -119,7 +119,7 @@ public class HouseController : MonoBehaviour
     {
         bool[] bools = { true, false, true, true, true, true };
         AddBlockToGrid(0, 0, 0, bools);
-        ShowFreeSpaces();
+        //ShowFreeSpaces();
     }
 
     private void ShowFreeSpaces()
@@ -159,7 +159,130 @@ public class HouseController : MonoBehaviour
     {
         List<Vector3Int> validPositions = new List<Vector3Int>();
 
-        return new Vector3Int(0, 1, 0);
+        for(int i = 0; i < 6; i++)
+        {
+            if(adjacencies[i])
+            {
+                for(int j = 0; j < freeSpaces.Count; j++)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            if (GridContainsPart(freeSpaces[j].x, freeSpaces[j].y + 1, freeSpaces[j].z))
+                            {
+                                for (int x = 0; x < xsize; x++)
+                                {
+                                    for (int z = 0; z < zsize; z++)
+                                    {
+                                        if (TestPartFit(new Vector3Int(freeSpaces[j].x - x, freeSpaces[j].y,
+                                            freeSpaces[j].z - z), xsize, ysize, zsize))
+                                        {
+                                            validPositions.Add(new Vector3Int(freeSpaces[j].x - x, freeSpaces[j].y,
+                                            freeSpaces[j].z - z));
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case 1:
+                            if (GridContainsPart(freeSpaces[j].x, freeSpaces[j].y - 1, freeSpaces[j].z))
+                            {
+                                for(int x = 0; x < xsize; x++)
+                                {
+                                    for (int z = 0; z < zsize; z++)
+                                    {
+                                        if (TestPartFit(new Vector3Int(freeSpaces[j].x - x, freeSpaces[j].y,
+                                            freeSpaces[j].z - z), xsize, ysize, zsize))
+                                        {
+                                            validPositions.Add(new Vector3Int(freeSpaces[j].x - x, freeSpaces[j].y,
+                                            freeSpaces[j].z - z));
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case 2:
+                            if (GridContainsPart(freeSpaces[j].x + 1, freeSpaces[j].y, freeSpaces[j].z))
+                            {
+                                for (int y = 0; y < ysize; y++)
+                                {
+                                    for (int z = 0; z < zsize; z++)
+                                    {
+                                        if (TestPartFit(new Vector3Int(freeSpaces[j].x, freeSpaces[j].y - y,
+                                            freeSpaces[j].z - z), xsize, ysize, zsize))
+                                        {
+                                            validPositions.Add(new Vector3Int(freeSpaces[j].x, freeSpaces[j].y - y,
+                                            freeSpaces[j].z - z));
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case 3:
+                            if (GridContainsPart(freeSpaces[j].x - 1, freeSpaces[j].y, freeSpaces[j].z))
+                            {
+                                for (int y = 0; y < ysize; y++)
+                                {
+                                    for (int z = 0; z < zsize; z++)
+                                    {
+                                        if (TestPartFit(new Vector3Int(freeSpaces[j].x, freeSpaces[j].y - y,
+                                            freeSpaces[j].z - z), xsize, ysize, zsize))
+                                        {
+                                            validPositions.Add(new Vector3Int(freeSpaces[j].x, freeSpaces[j].y - y,
+                                            freeSpaces[j].z - z));
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case 4:
+                            if (GridContainsPart(freeSpaces[j].x, freeSpaces[j].y, freeSpaces[j].z + 1))
+                            {
+                                for (int x = 0; x < xsize; x++)
+                                {
+                                    for (int y = 0; y < ysize; y++)
+                                    {
+                                        if (TestPartFit(new Vector3Int(freeSpaces[j].x - x, freeSpaces[j].y - y,
+                                            freeSpaces[j].z), xsize, ysize, zsize))
+                                        {
+                                            validPositions.Add(new Vector3Int(freeSpaces[j].x - x, freeSpaces[j].y - y,
+                                            freeSpaces[j].z));
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case 5:
+                            if (GridContainsPart(freeSpaces[j].x, freeSpaces[j].y, freeSpaces[j].z - 1))
+                            {
+                                for (int x = 0; x < xsize; x++)
+                                {
+                                    for (int y = 0; y < ysize; y++)
+                                    {
+                                        if (TestPartFit(new Vector3Int(freeSpaces[j].x - x, freeSpaces[j].y - y,
+                                            freeSpaces[j].z), xsize, ysize, zsize))
+                                        {
+                                            validPositions.Add(new Vector3Int(freeSpaces[j].x - x, freeSpaces[j].y - y,
+                                            freeSpaces[j].z));
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+
+        if(validPositions.Count > 0)
+        {
+            return validPositions[Random.Range(0, validPositions.Count)];
+        }
+        else
+        {
+            Debug.Log("No Valid Spaces");
+            return new Vector3Int(0, 0, 0);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -169,16 +292,24 @@ public class HouseController : MonoBehaviour
             if(collision.relativeVelocity.y >= 1 || collision.relativeVelocity.y <= -1)
             {
                 Destroy(collision.gameObject);
-                Debug.Log("destroyed house part: " + collision.gameObject.name);
+                //Debug.Log("destroyed house part: " + collision.gameObject.name);
             }
             else
             {
                 Vector3Int position = RandomlyFitPart(collision.gameObject.GetComponent<HousePart>().xsize, collision.gameObject.GetComponent<HousePart>().ysize, collision.gameObject.GetComponent<HousePart>().zsize, collision.gameObject.GetComponent<HousePart>().faces);
-                collision.gameObject.transform.parent = MeshObj.transform;
-                collision.gameObject.transform.localPosition = new Vector3(position.x, position.y, position.z);
-                collision.gameObject.transform.localRotation = new Quaternion();
-                AddBlockToGrid(position.x, position.y, position.z, collision.gameObject.GetComponent<HousePart>().faces);
-                Debug.Log("collected house part: " + collision.gameObject.name);
+                if(!(position == new Vector3Int(0, 0, 0)))
+                {
+                    collision.gameObject.transform.parent = MeshObj.transform;
+                    collision.gameObject.transform.localPosition = new Vector3(position.x, position.y, position.z);
+                    collision.gameObject.transform.localRotation = new Quaternion();
+                    Destroy(collision.gameObject.GetComponent<Rigidbody>());
+                    AddBlockToGrid(position.x, position.y, position.z, collision.gameObject.GetComponent<HousePart>().faces);
+                }
+                else
+                {
+                    Destroy(collision.gameObject);
+                }
+                //Debug.Log("collected house part: " + collision.gameObject.name);
                 ShowFreeSpaces();
             }
         }
