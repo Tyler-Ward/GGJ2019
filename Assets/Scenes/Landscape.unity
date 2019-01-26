@@ -206,9 +206,9 @@ GameObject:
   m_Component:
   - component: {fileID: 605906790}
   - component: {fileID: 605906789}
-  - component: {fileID: 605906791}
   - component: {fileID: 605906793}
   - component: {fileID: 605906792}
+  - component: {fileID: 605906791}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -256,12 +256,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 605906788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb9abff9c91c4864dbc85c033b92e2e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnArea: {fileID: 1996131589}
-  spawnCandidate: {fileID: 5403954581123877056, guid: ab42b5bd26c3f1c409d736fb17de5ee6,
-    type: 3}
+  spawnCandidate: {fileID: 1581334155, guid: af90d312af639dc46a1fb087e4bfdbb0, type: 3}
   frequency: 7
   variance: 3
   sizeVariance: 0
@@ -274,11 +273,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 605906788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb9abff9c91c4864dbc85c033b92e2e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnArea: {fileID: 1996131589}
-  spawnCandidate: {fileID: 1581334155, guid: af90d312af639dc46a1fb087e4bfdbb0, type: 3}
+  spawnCandidate: {fileID: 5403954581123877056, guid: ab42b5bd26c3f1c409d736fb17de5ee6,
+    type: 3}
   frequency: 7
   variance: 3
   sizeVariance: 0
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 605906788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb9abff9c91c4864dbc85c033b92e2e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4193a0cf3aa2a1f4aa058657806d1feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnArea: {fileID: 1996131589}
