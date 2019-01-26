@@ -5,10 +5,12 @@ using UnityEngine;
 public class HouseController : MonoBehaviour
 {
     public GameObject MeshObj;
+    public Collider collider;
     private Dictionary<Vector3Int, int> occupancyGrid = new Dictionary<Vector3Int, int>();
     //0 = empty space
     //1 = unoccupied adjacent cube
     //2 = contains part
+    private List<Vector3Int> freeSpaces = new List<Vector3Int>();
 
     public bool GridContainsPart(int x, int y, int z)
     {
@@ -38,37 +40,65 @@ public class HouseController : MonoBehaviour
         }
     }
 
-    public void AddBlockToGrid(int x, int y, int z)
+    public void AddBlockToGrid(int x, int y, int z, bool[] adjacencies)
     {
         if (GridContainsPart(x, y, z))
         {
             Debug.Log("overwriting part at " + new Vector3Int(x, y, z));
         }
+        if (freeSpaces.Contains(new Vector3Int(x, y, z)))
+        {
+            freeSpaces.Remove(new Vector3Int(x, y, z));
+        }
         occupancyGrid[new Vector3Int(x, y, z)] = 2;
 
-        if(!GridContainsPart(x + 1, y, z))
+        if(!GridContainsPart(x + 1, y, z) && adjacencies[2])
         {
             occupancyGrid[new Vector3Int(x + 1, y, z)] = 1;
+            if(!freeSpaces.Contains(new Vector3Int(x + 1, y, z)))
+            {
+                freeSpaces.Add(new Vector3Int(x + 1, y, z));
+            }
         }
-        if (!GridContainsPart(x - 1, y, z))
+        if (!GridContainsPart(x - 1, y, z) && adjacencies[3])
         {
             occupancyGrid[new Vector3Int(x - 1, y, z)] = 1;
+            if (!freeSpaces.Contains(new Vector3Int(x - 1, y, z)))
+            {
+                freeSpaces.Add(new Vector3Int(x - 1, y, z));
+            }
         }
-        if (!GridContainsPart(x, y + 1, z))
+        if (!GridContainsPart(x, y + 1, z) && adjacencies[0])
         {
             occupancyGrid[new Vector3Int(x, y + 1, z)] = 1;
+            if (!freeSpaces.Contains(new Vector3Int(x, y + 1, z)))
+            {
+                freeSpaces.Add(new Vector3Int(x, y + 1, z));
+            }
         }
-        if (!GridContainsPart(x, y - 1, z))
+        if (!GridContainsPart(x, y - 1, z) && adjacencies[1])
         {
             occupancyGrid[new Vector3Int(x, y - 1, z)] = 1;
+            if (!freeSpaces.Contains(new Vector3Int(x, y - 1, z)))
+            {
+                freeSpaces.Add(new Vector3Int(x, y - 1, z));
+            }
         }
-        if (!GridContainsPart(x, y, z + 1))
+        if (!GridContainsPart(x, y, z + 1) && adjacencies[4])
         {
             occupancyGrid[new Vector3Int(x, y, z + 1)] = 1;
+            if (!freeSpaces.Contains(new Vector3Int(x, y, z + 1)))
+            {
+                freeSpaces.Add(new Vector3Int(x, y, z + 1));
+            }
         }
-        if (!GridContainsPart(x, y, z - 1))
+        if (!GridContainsPart(x, y, z - 1) && adjacencies[5])
         {
             occupancyGrid[new Vector3Int(x, y, z - 1)] = 1;
+            if (!freeSpaces.Contains(new Vector3Int(x, y, z - 1)))
+            {
+                freeSpaces.Add(new Vector3Int(x, y, z - 1));
+            }
         }
     }
 
@@ -87,41 +117,70 @@ public class HouseController : MonoBehaviour
 
     void Start()
     {
-        for(int x = 0; x < 1; x++)
-        {
-            for (int y = 0; y < 1; y++)
-            {
-                for (int z = 0; z < 1; z++)
-                {
-                    AddBlockToGrid(x, y, z);
-                }
-            }
-        }
+        bool[] bools = { true, false, true, false, true, true };
+        AddBlockToGrid(0, 0, 0, bools);
+        ShowFreeSpaces();
+    }
 
-        for (int x = -9; x < 10; x++)
+    private void ShowFreeSpaces()
+    {
+        for (int i = 0; i < freeSpaces.Count; i++)
         {
-            for (int y = 0; y < 10; y++)
+            GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            obj.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 0.25f);
+            obj.GetComponent<Renderer>().material.shader = Shader.Find("Legacy Shaders/Transparent/Bumped Diffuse");
+            obj.GetComponent<Collider>().enabled = false;
+            obj.transform.parent = MeshObj.transform;
+            obj.transform.localPosition = new Vector3(freeSpaces[i].x, freeSpaces[i].y + 0.5f, freeSpaces[i].z);
+            obj.transform.localRotation = new Quaternion();
+            Destroy(obj, 5);
+        }
+    }
+
+    bool TestPartFit(Vector3Int position, float xsize, float ysize, float zsize)
+    {
+        for(int x = 0; x < xsize; x++)
+        {
+            for (int y = 0; y < ysize; y++)
             {
-                for (int z = -9; z < 10; z++)
+                for (int z = 0; z < zsize; z++)
                 {
-                    int occupancy = GetOccupancyAt(x, y, z);
-                    Debug.Log(new Vector3Int(x, y, z) + " " + occupancy);
-                    if(occupancy == 1)
+                    if(GridContainsPart(position.x + x, position.y + y, position.z + z))
                     {
-                        GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        obj.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 0.25f);
-                        obj.GetComponent<Renderer>().material.shader = Shader.Find("Legacy Shaders/Transparent/Bumped Diffuse");
-                        obj.GetComponent<Collider>().enabled = false;
-                        obj.transform.parent = MeshObj.transform;
-                        obj.transform.position = new Vector3(x, y+0.5f, z);
+                        return false;
                     }
                 }
             }
         }
+        return true;
     }
 
-    void FixedUpdate()
+    private Vector3Int RandomlyFitPart(float xsize, float ysize, float zsize, bool[] adjacencies)
     {
-        
+        List<Vector3Int> validPositions = new List<Vector3Int>();
+
+        return new Vector3Int(0, 1, 0);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.GetComponent<HousePart>() != null)
+        {
+            if(collision.relativeVelocity.y >= 1 || collision.relativeVelocity.y <= -1)
+            {
+                Destroy(collision.gameObject);
+                Debug.Log("destroyed house part: " + collision.gameObject.name);
+            }
+            else
+            {
+                Vector3Int position = RandomlyFitPart(collision.gameObject.GetComponent<HousePart>().xsize, collision.gameObject.GetComponent<HousePart>().ysize, collision.gameObject.GetComponent<HousePart>().zsize, collision.gameObject.GetComponent<HousePart>().faces);
+                collision.gameObject.transform.parent = MeshObj.transform;
+                collision.gameObject.transform.localPosition = new Vector3(position.x, position.y, position.z);
+                collision.gameObject.transform.localRotation = new Quaternion();
+                AddBlockToGrid(position.x, position.y, position.z, collision.gameObject.GetComponent<HousePart>().faces);
+                Debug.Log("collected house part: " + collision.gameObject.name);
+                ShowFreeSpaces();
+            }
+        }
     }
 }
