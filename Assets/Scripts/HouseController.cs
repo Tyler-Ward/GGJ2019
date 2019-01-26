@@ -12,7 +12,12 @@ public class HouseController : MonoBehaviour
     //2 = contains part
     private List<Vector3Int> freeSpaces = new List<Vector3Int>();
 
-    public AudioSource pickupSound;
+	public AudioSource pickupSound;
+
+    public int GetScore()
+    {
+        return occupancyGrid.Count;
+    }
 
     public bool GridContainsPart(int x, int y, int z)
     {

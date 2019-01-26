@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     public GameObject Player;
     public Vector3 startPosition;
     public bool GameRunning;
+    public HouseController houseController;
+    public Text scorebox;
 
     public void StartGame ()
     {
@@ -25,6 +27,7 @@ public class GameController : MonoBehaviour
         Debug.Log("END GAME");
         Menu.SetActive(true);
         GameRunning = false;
+        scorebox.text = "SCORE: " + houseController.GetScore();
     }
 
     // Start is called before the first frame update
