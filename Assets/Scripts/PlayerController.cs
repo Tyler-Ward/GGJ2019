@@ -8,9 +8,9 @@ public class PlayerController : MonoBehaviour
     public ResourceManager resources;
 
     public float MaxSpeed = 2;
-    public float MaxTurnSpeed = 180f;
+    public float MaxTurnSpeed = 45f;
     public float Aceleration = 1f;
-    public float TurnAceleration = 180;
+    public float TurnAceleration = 20;
 
     private float CurrentSpeed = 0;
     private float CurrentTurn = 0;

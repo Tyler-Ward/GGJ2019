@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -989,7 +989,12 @@ PrefabInstance:
     - target: {fileID: 6159028415735177030, guid: 9574fa1a749387e44abdf046758443c3,
         type: 3}
       propertyPath: TurnAceleration
-      value: 90
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159028415735177030, guid: 9574fa1a749387e44abdf046758443c3,
+        type: 3}
+      propertyPath: MaxTurnSpeed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9574fa1a749387e44abdf046758443c3, type: 3}
