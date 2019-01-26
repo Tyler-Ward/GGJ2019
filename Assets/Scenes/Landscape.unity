@@ -757,7 +757,7 @@ PrefabInstance:
     - target: {fileID: 7161852660152116772, guid: 28699504de6e5e04c8a364d5a44cdc40,
         type: 3}
       propertyPath: frequency
-      value: 5000
+      value: 2000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28699504de6e5e04c8a364d5a44cdc40, type: 3}
