@@ -29,7 +29,7 @@ public class TreeSpawner : MonoBehaviour
                 min.z + (float)random.NextDouble() * (max.z - min.z)
             );
 
-            Instantiate(spawnCandidate, position, Quaternion.identity);
+            Instantiate(spawnCandidate, position, Quaternion.Euler(-90, 0, 0));
         }
     }
 
