@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public GameObject Menu;
+    public GameObject Menu2;
     public ResourceManager resourceManager;
     public GameObject Player;
     public Vector3 startPosition;
@@ -16,6 +17,7 @@ public class GameController : MonoBehaviour
     public void StartGame ()
     {
         Menu.SetActive(false);
+        Menu2.SetActive(false);
         resourceManager.Fuel = 75;
         GameRunning = true;
         Player.transform.position = startPosition;
@@ -26,6 +28,14 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("END GAME");
         Menu.SetActive(true);
+        GameRunning = false;
+        scorebox.text = "SCORE: " + houseController.GetScore();
+    }
+
+    public void EndGame2()
+    {
+        Debug.Log("END GAME 2");
+        Menu2.SetActive(true);
         GameRunning = false;
         scorebox.text = "SCORE: " + houseController.GetScore();
     }
@@ -47,7 +57,7 @@ public class GameController : MonoBehaviour
                 EndGame();
             }
 
-            Debug.Log(Vector3.Dot(Player.transform.up, Vector3.down));
+            //Debug.Log(Vector3.Dot(Player.transform.up, Vector3.down));
             if(Vector3.Dot(Player.transform.up, Vector3.down) > 0)
             {
                 EndGame();
@@ -56,7 +66,7 @@ public class GameController : MonoBehaviour
 
             if(Player.transform.position.y<-2)
             {
-                EndGame();
+                EndGame2();
             }
         }
     }
