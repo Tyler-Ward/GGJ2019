@@ -200,6 +200,8 @@ public class HouseController : MonoBehaviour
                     }
                 }
             }
+            TrackController track = newBlock.gameObject.GetComponent<TrackController>();
+            track.Enable();
         }
         else
         {

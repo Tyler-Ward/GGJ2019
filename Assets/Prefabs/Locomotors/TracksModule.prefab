@@ -87,6 +87,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.601
       objectReference: {fileID: 0}
+    - target: {fileID: 8773422546080057847, guid: 978357418a62bf7419577751d4194b21,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773422546080057847, guid: 978357418a62bf7419577751d4194b21,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2793081265780626953, guid: 978357418a62bf7419577751d4194b21,
         type: 3}
       propertyPath: m_Size.y
@@ -97,5 +107,43 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.7326588
       objectReference: {fileID: 0}
+    - target: {fileID: 3811377752611932652, guid: 978357418a62bf7419577751d4194b21,
+        type: 3}
+      propertyPath: startActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811377752611932652, guid: 978357418a62bf7419577751d4194b21,
+        type: 3}
+      propertyPath: A
+      value: 
+      objectReference: {fileID: 6373202082672519257}
+    - target: {fileID: 3811377752611932652, guid: 978357418a62bf7419577751d4194b21,
+        type: 3}
+      propertyPath: B
+      value: 
+      objectReference: {fileID: 395650337721120608}
+    - target: {fileID: 3811377752611932652, guid: 978357418a62bf7419577751d4194b21,
+        type: 3}
+      propertyPath: collisionBox
+      value: 
+      objectReference: {fileID: 899203289265241278}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978357418a62bf7419577751d4194b21, type: 3}
+--- !u!65 &899203289265241278 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2793081265780626953, guid: 978357418a62bf7419577751d4194b21,
+    type: 3}
+  m_PrefabInstance: {fileID: 3078659205866154679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &6373202082672519257 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 8271900559281930990, guid: 978357418a62bf7419577751d4194b21,
+    type: 3}
+  m_PrefabInstance: {fileID: 3078659205866154679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &395650337721120608 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 3441939643900239319, guid: 978357418a62bf7419577751d4194b21,
+    type: 3}
+  m_PrefabInstance: {fileID: 3078659205866154679}
+  m_PrefabAsset: {fileID: 0}

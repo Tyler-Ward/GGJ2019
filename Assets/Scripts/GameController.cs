@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour
     {
         if (GameRunning)
         {
-            resourceManager.Fuel -= 0.025f;
+            resourceManager.Fuel -= 0.05f;
             if (resourceManager.Fuel <= 0)
             {
                 EndGame();
