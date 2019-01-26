@@ -898,6 +898,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 1062095028}
   resourceManager: {fileID: 1989586706}
+  Player: {fileID: 1896332857}
+  GameRunning: 0
 --- !u!4 &653456448
 Transform:
   m_ObjectHideFlags: 0
@@ -1912,6 +1914,7 @@ MonoBehaviour:
   MeshObj: {fileID: 294674231}
   rigidBody: {fileID: 1896332860}
   fly: 0
+  resources: {fileID: 1989586706}
 --- !u!1 &1934680909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 5405e6ec66c2543939d74fd3ed4f8869,
