@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
         Menu.SetActive(false);
         resourceManager.Fuel = 75;
         GameRunning = true;
-        Player.transform.position = new Vector3(0, 1, 0);
+        Player.transform.position = new Vector3(0, 4, 0);
     }
 
     // Start is called before the first frame update
