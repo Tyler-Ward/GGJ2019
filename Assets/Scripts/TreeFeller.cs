@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TreeFeller : MonoBehaviour
 {
+    public int fuelAmount;
     public AudioSource sound;
 
     private void OnCollisionEnter(Collision collision)
@@ -15,6 +16,7 @@ public class TreeFeller : MonoBehaviour
 
         if (hitByPlayer)
         {
+            GameObject.Find("ResourceController").GetComponent<ResourceManager>().Fuel += fuelAmount;
             sound.volume = firstHit ?  1.0f : 0.2f;
         } else
         {
