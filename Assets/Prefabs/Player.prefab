@@ -94,8 +94,9 @@ GameObject:
   - component: {fileID: 8178281096564420229}
   - component: {fileID: 8178281096564420226}
   - component: {fileID: 8178281096564420227}
+  - component: {fileID: 6159028415735177030}
   m_Layer: 0
-  m_Name: Player0 (1)
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8178281096564420224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8178281097619485551}
@@ -125,7 +126,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8178281096564420224}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 30
   m_Drag: 0.2
   m_AngularDrag: 0.2
   m_UseGravity: 1
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8178281096564420224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68a89ebaa7194fb4e8231efb8ff1d755, type: 3}
   m_Name: 
@@ -170,6 +171,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MeshObj: {fileID: 8178281097619124047}
   collider: {fileID: 0}
+--- !u!114 &6159028415735177030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8178281096564420224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6115cf8daafaa47a2baf1134976bdc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources: {fileID: 0}
+  speed: 2
+  turnSpeed: 180
 --- !u!65 &8178281097619089888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -194,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shed1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 231db623b89024fafb4d97ca8b3bedda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 231db623b89024fafb4d97ca8b3bedda, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -208,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 231db623b89024fafb4d97ca8b3bedda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 231db623b89024fafb4d97ca8b3bedda, type: 3}
       propertyPath: m_LocalPosition.z

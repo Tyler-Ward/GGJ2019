@@ -15,7 +15,8 @@ public class GameController : MonoBehaviour
         Menu.SetActive(false);
         resourceManager.Fuel = 75;
         GameRunning = true;
-        Player.transform.position = new Vector3(0, 4, 0);
+        Player.transform.position = new Vector3(0, 5, 0);
+        Player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     // Start is called before the first frame update
@@ -29,7 +30,7 @@ public class GameController : MonoBehaviour
     {
         if (GameRunning)
         {
-            resourceManager.Fuel -= 0.1f;
+            resourceManager.Fuel -= 0.01f;
             if (resourceManager.Fuel <= 0)
             {
                 Debug.Log("END GAME");
