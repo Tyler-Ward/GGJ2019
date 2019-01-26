@@ -56,7 +56,7 @@ namespace Player
             rot = new Vector2(rot.x + inputh * turnSpeed, 0);
 
             MeshObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up);
-            CameraMountObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up);
+            //CameraMountObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up);
 
             /*if (Input.GetKey(KeyCode.W))
             {
