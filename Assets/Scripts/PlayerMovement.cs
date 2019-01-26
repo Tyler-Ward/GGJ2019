@@ -16,6 +16,8 @@ namespace Player
         public Rigidbody rigidBody;
         public bool fly = false;
 
+        public ResourceManager resources;
+
         Vector3 pos;
         Vector2 rot;
         bool jumping = false;
@@ -39,6 +41,8 @@ namespace Player
 
         void RigidBodyCameraPosition()
         {
+            if (resources.Fuel <= 0)
+                return;
             pos = Vector3.zero;
 
             float inputv = Input.GetAxis("Vertical");
@@ -52,7 +56,7 @@ namespace Player
             rot = new Vector2(rot.x + inputh * turnSpeed, 0);
 
             MeshObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up);
-            CameraMountObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up);
+            //CameraMountObj.transform.localRotation = Quaternion.AngleAxis(rot.x, Vector3.up);
 
             /*if (Input.GetKey(KeyCode.W))
             {
@@ -75,7 +79,7 @@ namespace Player
                 pos.z += -Mathf.Sin(Mathf.Deg2Rad * MeshObj.transform.rotation.eulerAngles.y) * speed;
             }*/
             //if (Input.GetKey(KeyCode.LeftShift)) {}
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) || Input.GetButton("Jump"))
             {
                 if (!jumping && (rigidBody.velocity.y < 0.001) && (rigidBody.velocity.y > -0.001))
                 {
