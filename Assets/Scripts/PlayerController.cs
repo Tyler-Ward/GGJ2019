@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource engineSound;
     public float maxVolume = 1.0f;
+    public Camera liveCam;
+    public Camera deathCam;
+    public GameObject deathCamMount;
 
     void Start()
     {
@@ -29,9 +32,22 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Turn();
+        deathCamMount.transform.eulerAngles = new Vector3(0, 0, 0);
         return;
 
     }
+
+    public void onDeath()
+    {
+        deathCam.enabled = true;
+        liveCam.enabled = false;
+    }
+
+    public void onLive()
+    {
+        deathCam.enabled = false;
+        liveCam.enabled = true;
+    } 
 
     private void Move()
     {
