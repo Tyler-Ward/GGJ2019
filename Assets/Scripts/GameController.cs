@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
         if (GameRunning)
         {
             resourceManager.Fuel -= (0.05f*houseController.locomotors);
-            if (resourceManager.Fuel <= 0 && Player.gameObject.GetComponent<Rigidbody>().velocity.magnitude < 0.5)
+            if (resourceManager.Fuel <= 0 && Player.gameObject.GetComponent<Rigidbody>().velocity.magnitude < 0.1)
             {
                 Debug.Log(Player.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
                 EndGame();
