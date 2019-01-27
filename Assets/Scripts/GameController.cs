@@ -73,7 +73,7 @@ public class GameController : MonoBehaviour
 
             if(Player.transform.position.y<-2)
             {
-                EndGame2();
+                EndGame();
             }
         }
     }
