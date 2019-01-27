@@ -32,7 +32,7 @@ public class TrackController : MonoBehaviour
     public void Enable()
     {
         active = true;
-        startDebris();
+        //startDebris();
     }
 
     private void OnCollisionEnter(Collision collision)
