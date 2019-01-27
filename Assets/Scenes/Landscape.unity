@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &61518747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2890141892263492758, guid: 030a4535feb89044eaa07aacdf14ee5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3420729110915319723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &234266014
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +347,7 @@ MonoBehaviour:
   GameRunning: 0
   houseController: {fileID: 8178281097022454074}
   scorebox: {fileID: 1438787100}
+  scoredisplay: {fileID: 61518747}
 --- !u!4 &605906790
 Transform:
   m_ObjectHideFlags: 0
