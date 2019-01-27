@@ -21,6 +21,8 @@ public class AIController : MonoBehaviour
     public float intendedTurn = 0;
     public Vector3 targetPosition = new Vector3(0, 0, 0);
 
+    public TrackController tracks;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -53,6 +55,7 @@ public class AIController : MonoBehaviour
 
     public void KillAI()
     {
+        tracks.gapDebis();
         HouseController houseController = gameObject.GetComponent<HouseController>();
         for(int i = 0; i < houseController.componentBlocks.Count; i++)
         {

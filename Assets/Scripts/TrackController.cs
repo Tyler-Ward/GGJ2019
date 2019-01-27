@@ -32,7 +32,7 @@ public class TrackController : MonoBehaviour
     public void Enable()
     {
         active = true;
-        //startDebris();
+        StartCoroutine(startDebris());
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,15 +40,25 @@ public class TrackController : MonoBehaviour
         startDebris();
     }
 
-    private void startDebris()
+    private IEnumerator startDebris()
     {
         if (active)
         {
-            Debug.Log("Contact");
+            yield return new WaitForSeconds(1);
+            //Debug.Log("Contact");
             A.emitting = true;
             B.emitting = true;
             ParticleSystem.EmissionModule smoke = C.emission;
             smoke.enabled = true;
         }
+    }
+
+    public void gapDebis()
+    {
+        A.emitting = false;
+        B.emitting = false;
+        ParticleSystem.EmissionModule smoke = C.emission;
+        smoke.enabled = false;
+        StartCoroutine(startDebris());
     }
 }

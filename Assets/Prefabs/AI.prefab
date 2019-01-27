@@ -66,6 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MeshObj: {fileID: 5990108168016786686}
   collider: {fileID: 5990108168016884305}
+  componentBlocks: []
   resourceManager: {fileID: 0}
   pickupSound: {fileID: 0}
   score: 0
@@ -90,6 +91,8 @@ MonoBehaviour:
   maxVolume: 0.7
   intendedSpeed: 1
   intendedTurn: 0
+  targetPosition: {x: 0, y: 0, z: 0}
+  tracks: {fileID: 1220478178369294605}
 --- !u!1 &5990108167403365272
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +496,18 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 2599907052823484641}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1220478178369294605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3811377752611932652, guid: 978357418a62bf7419577751d4194b21,
+    type: 3}
+  m_PrefabInstance: {fileID: 2599907052823484641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf42ff160429d44caaa2dcc102eb945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!96 &6259730854596663823 stripped
 TrailRenderer:
   m_CorrespondingSourceObject: {fileID: 8271900559281930990, guid: 978357418a62bf7419577751d4194b21,

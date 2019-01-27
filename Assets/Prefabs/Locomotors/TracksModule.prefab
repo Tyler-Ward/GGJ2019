@@ -35,6 +35,8 @@ MonoBehaviour:
   ypos: 0
   zpos: 0
   locomotion: 1
+  score: 1
+  storage: 0
   faces: 010000000000
 --- !u!1001 &3078659205866154679
 PrefabInstance:
@@ -138,15 +140,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3441939643900239319, guid: 978357418a62bf7419577751d4194b21,
+        type: 3}
+      propertyPath: m_Emitting
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3387786436358643899, guid: 978357418a62bf7419577751d4194b21,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48900002
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 822724738188469509, guid: 978357418a62bf7419577751d4194b21,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.7609999
       objectReference: {fileID: 0}
     - target: {fileID: 8773422546080057847, guid: 978357418a62bf7419577751d4194b21,
         type: 3}
@@ -158,15 +165,20 @@ PrefabInstance:
       propertyPath: EmissionModule.enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8271900559281930990, guid: 978357418a62bf7419577751d4194b21,
+        type: 3}
+      propertyPath: m_Emitting
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5234781032979549984, guid: 978357418a62bf7419577751d4194b21,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.601
+      value: 0.5619999
       objectReference: {fileID: 0}
     - target: {fileID: 5533750307613184256, guid: 978357418a62bf7419577751d4194b21,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.7609999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978357418a62bf7419577751d4194b21, type: 3}
