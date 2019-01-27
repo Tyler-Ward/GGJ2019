@@ -11,6 +11,7 @@ public class HouseController : MonoBehaviour
     //1 = unoccupied adjacent cube
     //2 = contains part
     private List<Vector3Int> freeSpaces = new List<Vector3Int>();
+    public List<GameObject> componentBlocks = new List<GameObject>();
     public ResourceManager resourceManager;
 
 	public AudioSource pickupSound;
@@ -22,6 +23,7 @@ public class HouseController : MonoBehaviour
     {
         occupancyGrid = new Dictionary<Vector3Int, int>();
         freeSpaces = new List<Vector3Int>();
+        componentBlocks = new List<GameObject>();
         MakeDefaultHouse();
     }
 
@@ -361,6 +363,7 @@ public class HouseController : MonoBehaviour
                     collision.gameObject.transform.localPosition = new Vector3(position.x, position.y, position.z);
                     collision.gameObject.transform.localRotation = new Quaternion();
                     Destroy(collision.gameObject.GetComponent<Rigidbody>());
+                    componentBlocks.Add(collision.gameObject);
                     AddBlockToGrid(position.x, position.y, position.z, collision.gameObject.GetComponent<HousePart>().faces);
                 }
                 else

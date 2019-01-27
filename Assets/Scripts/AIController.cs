@@ -53,6 +53,14 @@ public class AIController : MonoBehaviour
 
     public void KillAI()
     {
+        HouseController houseController = gameObject.GetComponent<HouseController>();
+        for(int i = 0; i < houseController.componentBlocks.Count; i++)
+        {
+            houseController.componentBlocks[i].transform.parent = null;
+            houseController.componentBlocks[i].AddComponent<Rigidbody>();
+        }
+        houseController.EmptyGrid();
+
         Vector3 position = GetRandomPosition();
         transform.rotation = Quaternion.identity;
         transform.position = new Vector3(position.x, position.y + 1, position.z);
