@@ -381,6 +381,8 @@ MonoBehaviour:
   - prefab: {fileID: 3701599220195438013, guid: 7c2e35c981613c34daedaef80e2f177b,
       type: 3}
     weight: 5
+  - prefab: {fileID: 109659512388170927, guid: 1c349293678d4d4409119eace8503b76, type: 3}
+    weight: 2
   spawnArea: {fileID: 352576347}
   frequency: 5000
   variance: 300
