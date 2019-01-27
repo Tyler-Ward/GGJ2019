@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 538594250}
-  Menu2: {fileID: 960719394}
+  Menu2: {fileID: 538594250}
   resourceManager: {fileID: 1267669156}
   Player: {fileID: 2136151993}
   startPosition: {x: 0, y: 2.75, z: 0}
@@ -527,12 +527,6 @@ Transform:
   m_Father: {fileID: 605906790}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &960719394 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 960719394, guid: 030a4535feb89044eaa07aacdf14ee5e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3420729110915319723}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1053408245
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fuel: 0
   FuelSlider: {fileID: 276493820}
+  MaxFuel: 0
 --- !u!4 &1267669157
 Transform:
   m_ObjectHideFlags: 0
@@ -1008,6 +1003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 960719394, guid: 030a4535feb89044eaa07aacdf14ee5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3420729111784229932, guid: 030a4535feb89044eaa07aacdf14ee5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1221,6 +1220,11 @@ PrefabInstance:
       propertyPath: pickupSound
       value: 
       objectReference: {fileID: 1221210696}
+    - target: {fileID: 8178281096564420227, guid: 9574fa1a749387e44abdf046758443c3,
+        type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 1267669156}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9574fa1a749387e44abdf046758443c3, type: 3}
 --- !u!114 &8178281097022454074 stripped

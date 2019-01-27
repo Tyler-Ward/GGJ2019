@@ -560,4 +560,6 @@ MonoBehaviour:
   ypos: 0
   zpos: 0
   locomotion: 0
+  score: 15
+  storage: 0
   faces: 000100000000

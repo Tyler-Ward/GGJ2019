@@ -11,5 +11,7 @@ public class HousePart : MonoBehaviour
     public float ypos = 0;
     public float zpos = 0;
     public bool locomotion = false;
+    public int score = 1;
+    public int storage = 0;
     public bool[] faces = {false, true, false, false, false, false}; //up down left right front back
 }

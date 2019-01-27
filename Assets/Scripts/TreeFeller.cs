@@ -20,7 +20,10 @@ public class TreeFeller : MonoBehaviour
 
         if (hitByPlayer)
         {
-            GameObject.Find("ResourceController").GetComponent<ResourceManager>().Fuel += fuelAmount;
+            if (firstHit)
+            {
+                GameObject.Find("ResourceController").GetComponent<ResourceManager>().Fuel += fuelAmount;
+            }
             sound.volume = firstHit ?  1.0f : 0.2f;
         } else
         {

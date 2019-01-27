@@ -241,6 +241,9 @@ MonoBehaviour:
   xpos: 0
   ypos: 0
   zpos: 0
+  locomotion: 0
+  score: 1
+  storage: 10
   faces: 010101010101
 --- !u!1 &7241154831782331009
 GameObject:
