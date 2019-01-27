@@ -85,6 +85,10 @@ public class GameController : MonoBehaviour
         else
         {
             resourceManager.Fuel = 0;
+            if(Input.GetButton("Submit"))
+            {
+                StartGame();
+            }
         }
     }
 }
