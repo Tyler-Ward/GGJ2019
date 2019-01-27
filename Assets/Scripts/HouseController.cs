@@ -11,8 +11,12 @@ public class HouseController : MonoBehaviour
     //1 = unoccupied adjacent cube
     //2 = contains part
     private List<Vector3Int> freeSpaces = new List<Vector3Int>();
+    public ResourceManager resourceManager;
 
 	public AudioSource pickupSound;
+
+    public int score;
+    public int locomotors;
 
     public void EmptyGrid()
     {
@@ -23,7 +27,7 @@ public class HouseController : MonoBehaviour
 
     public int GetScore()
     {
-        return occupancyGrid.Count;
+        return score;
     }
 
     public bool GridContainsPart(int x, int y, int z)
@@ -137,6 +141,9 @@ public class HouseController : MonoBehaviour
         AddBlockToGrid(0, 0, 0, bools);
         bool[] lbools = { false, false, false, false, false, false };
         AddBlockToGrid(0, -1, 0, lbools);
+        score = 2;
+        locomotors = 1;
+        resourceManager.MaxFuel = 100;
     }
 
     void Start()
@@ -323,6 +330,10 @@ public class HouseController : MonoBehaviour
 
         if(validPositions.Count > 0)
         {
+            score += newBlock.score;
+            if (locomotion)
+                locomotors += 1;
+            resourceManager.MaxFuel += newBlock.storage;
             return validPositions[Random.Range(0, validPositions.Count)];
         }
         else

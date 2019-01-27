@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour
     {
         if (GameRunning)
         {
-            resourceManager.Fuel -= 0.05f;
+            resourceManager.Fuel -= (0.05f*houseController.locomotors);
             if (resourceManager.Fuel <= 0)
             {
                 EndGame();

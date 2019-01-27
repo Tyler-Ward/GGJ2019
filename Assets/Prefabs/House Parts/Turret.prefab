@@ -53,6 +53,8 @@ MonoBehaviour:
   ypos: 0
   zpos: 0
   locomotion: 0
+  score: 2
+  storage: 0
   faces: 000100000000
 --- !u!65 &737486243909500378
 BoxCollider:
