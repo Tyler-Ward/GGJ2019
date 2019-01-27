@@ -12,7 +12,11 @@ public class TreeFeller : MonoBehaviour
         bool firstHit = gameObject.GetComponent<Rigidbody>() == null;
         bool hitByPlayer = collision.gameObject.GetComponent<PlayerController>() != null;
 
-        if (firstHit) gameObject.AddComponent<Rigidbody>();
+        if (firstHit)
+        {
+            gameObject.AddComponent<Rigidbody>();
+            Destroy(gameObject, 60);
+        }
 
         if (hitByPlayer)
         {
