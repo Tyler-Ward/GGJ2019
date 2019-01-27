@@ -199,9 +199,9 @@ public class HouseController : MonoBehaviour
 
         if (locomotion)
         {
-            for (int x = -2; x < 3; x++)
+            for (int x = -1; x <= 1; x++)
             {
-                for (int z = -2; z < 3; z++)
+                for (int z = -1; z <= 1; z++)
                 {
                     if (!GridContainsPart(x, -1, z))
                     {
