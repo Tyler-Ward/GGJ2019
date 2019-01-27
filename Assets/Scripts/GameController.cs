@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public bool GameRunning;
     public HouseController houseController;
     public Text scorebox;
+    public Text scoredisplay;
 
     public void StartGame ()
     {
@@ -56,6 +57,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoredisplay.text = "Score: " + houseController.GetScore().ToString();
+
         if (GameRunning)
         {
             resourceManager.Fuel -= (0.05f*houseController.locomotors);
