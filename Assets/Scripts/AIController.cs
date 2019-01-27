@@ -157,4 +157,33 @@ public class AIController : MonoBehaviour
         Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
         rb.MoveRotation(rb.rotation * turnRotation);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.GetComponent<HouseController>() != null)
+        {
+            if (collision.gameObject.GetComponent<HouseController>().GetScore() >= gameObject.GetComponent<HouseController>().GetScore())
+            {
+                KillAI();
+            }
+            else
+            {
+                if (collision.gameObject.GetComponent<AIController>() != null)
+                {
+                    collision.gameObject.GetComponent<AIController>().KillAI();
+                }
+                if(collision.gameObject.GetComponent<PlayerController>())
+                {
+                    Component.FindObjectOfType<GameController>().EndGame();
+                    HouseController houseController = collision.gameObject.GetComponent<HouseController>();
+                    for (int i = 0; i < houseController.componentBlocks.Count; i++)
+                    {
+                        houseController.componentBlocks[i].transform.parent = null;
+                        houseController.componentBlocks[i].AddComponent<Rigidbody>();
+                    }
+                    houseController.EmptyGrid();
+                }
+            }
+        }
+    }
 }
