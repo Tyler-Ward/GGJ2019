@@ -26,6 +26,7 @@ public class AIController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         engineSound.loop = true;
         engineSound.Play();
+        targetPosition = GetRandomPosition();
     }
 
     void FixedUpdate()
@@ -34,12 +35,28 @@ public class AIController : MonoBehaviour
         Move();
         Turn();
         return;
+    }
 
+    Vector3 GetRandomPosition()
+    {
+        System.Random random = new System.Random(System.DateTime.Now.Millisecond);
+        Vector3 position = new Vector3(0, -50, 0);
+        while (position.y <= 0)
+        {
+            Vector3 origin = new Vector3(random.Next(-100, 100), 50, random.Next(-100, 100));
+            Ray ray = new Ray(origin, new Vector3(0, -1, 0));
+            RaycastHit[] casts = Physics.RaycastAll(ray);
+            position = casts[0].point;
+        }
+        return position;
     }
 
     public void KillAI()
     {
-        Destroy(gameObject);
+        Vector3 position = GetRandomPosition();
+        transform.rotation = Quaternion.identity;
+        transform.position = new Vector3(position.x, position.y + 1, position.z);
+        //Destroy(gameObject);
     }
 
     private void DoAI()
@@ -48,11 +65,18 @@ public class AIController : MonoBehaviour
         {
             KillAI();
         }
+        if (Vector3.Dot(transform.up, Vector3.down) > 0)
+        {
+            KillAI();
+        }
 
         if (Vector3.Distance(transform.position, targetPosition) < 5f)
         {
-            
+            targetPosition = GetRandomPosition();
         }
+
+        Vector3 relativeVector = transform.InverseTransformPoint(targetPosition);
+        intendedTurn = relativeVector.x / relativeVector.magnitude;
     }
 
     private void Move()
