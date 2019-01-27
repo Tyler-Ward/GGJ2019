@@ -73,6 +73,11 @@ public class GameController : MonoBehaviour
             //Debug.Log(Vector3.Dot(Player.transform.up, Vector3.down));
             if(Vector3.Dot(Player.transform.up, Vector3.down) > 0)
             {
+                for (int i = 0; i < houseController.componentBlocks.Count; i++)
+                {
+                    houseController.componentBlocks[i].transform.parent = null;
+                    houseController.componentBlocks[i].AddComponent<Rigidbody>();
+                }
                 EndGame();
             }
             
