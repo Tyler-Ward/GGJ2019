@@ -15,6 +15,6 @@ public class LightRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up, Time.deltaTime * 100f);
+        transform.Rotate(Vector3.up, Time.deltaTime * 360f/60f * rpm);
     }
 }

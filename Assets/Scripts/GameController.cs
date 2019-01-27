@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
             partSpawners[i].SpawnObjects();
             houseController.EmptyGrid();
         }
+        Player.GetComponent<PlayerController>().onLive();
     }
 
     public void EndGame()
@@ -38,6 +39,7 @@ public class GameController : MonoBehaviour
         Menu.SetActive(true);
         GameRunning = false;
         scorebox.text = "SCORE: " + houseController.GetScore();
+        Player.GetComponent<PlayerController>().onDeath();
     }
 
     public void EndGame2()
@@ -79,6 +81,10 @@ public class GameController : MonoBehaviour
             {
                 EndGame();
             }
+        }
+        else
+        {
+            resourceManager.Fuel = 0;
         }
     }
 }
