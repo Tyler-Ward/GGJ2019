@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-
+        MaxSpeed = (5f * gameObject.GetComponent<HouseController>().locomotors) / gameObject.GetComponent<HouseController>().score;
 
         if (resources.Fuel > 0 && Input.GetAxis("Vertical")!=0)
         {

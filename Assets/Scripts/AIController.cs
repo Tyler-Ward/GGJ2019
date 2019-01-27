@@ -89,7 +89,7 @@ public class AIController : MonoBehaviour
 
     private void Move()
     {
-
+        MaxSpeed = (5f * gameObject.GetComponent<HouseController>().locomotors) / gameObject.GetComponent<HouseController>().score;
 
         if (intendedSpeed != 0)
         {
