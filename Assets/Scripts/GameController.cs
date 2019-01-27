@@ -75,8 +75,11 @@ public class GameController : MonoBehaviour
             {
                 for (int i = 0; i < houseController.componentBlocks.Count; i++)
                 {
-                    houseController.componentBlocks[i].transform.parent = null;
-                    houseController.componentBlocks[i].AddComponent<Rigidbody>();
+                    if (houseController.componentBlocks[i] != null)
+                    {
+                        houseController.componentBlocks[i].transform.parent = null;
+                        houseController.componentBlocks[i].AddComponent<Rigidbody>();
+                    }
                 }
                 EndGame();
             }

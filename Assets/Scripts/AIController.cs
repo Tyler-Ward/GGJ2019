@@ -59,8 +59,11 @@ public class AIController : MonoBehaviour
         HouseController houseController = gameObject.GetComponent<HouseController>();
         for(int i = 0; i < houseController.componentBlocks.Count; i++)
         {
-            houseController.componentBlocks[i].transform.parent = null;
-            houseController.componentBlocks[i].AddComponent<Rigidbody>();
+            if (houseController.componentBlocks[i] != null)
+            {
+                houseController.componentBlocks[i].transform.parent = null;
+                houseController.componentBlocks[i].AddComponent<Rigidbody>();
+            }
         }
         houseController.EmptyGrid();
 
@@ -181,8 +184,11 @@ public class AIController : MonoBehaviour
                     HouseController houseController = collision.gameObject.GetComponent<HouseController>();
                     for (int i = 0; i < houseController.componentBlocks.Count; i++)
                     {
-                        houseController.componentBlocks[i].transform.parent = null;
-                        houseController.componentBlocks[i].AddComponent<Rigidbody>();
+                        if(houseController.componentBlocks[i] != null)
+                        {
+                            houseController.componentBlocks[i].transform.parent = null;
+                            houseController.componentBlocks[i].AddComponent<Rigidbody>();
+                        }
                     }
                     houseController.EmptyGrid();
                 }
