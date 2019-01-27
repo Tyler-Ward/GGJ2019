@@ -6,6 +6,7 @@ public class TreeFeller : MonoBehaviour
 {
     public int fuelAmount;
     public AudioSource sound;
+    public ParticleSystem hitdebris;
 
     private void OnCollisionEnter(Collision collision)
     { 
@@ -15,7 +16,8 @@ public class TreeFeller : MonoBehaviour
         if (firstHit)
         {
             gameObject.AddComponent<Rigidbody>();
-            Destroy(gameObject, 60);
+            Destroy(gameObject, 0.15f);
+            hitdebris.Play(true);
         }
 
         if (hitByPlayer)
