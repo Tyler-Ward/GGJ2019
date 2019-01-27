@@ -256,6 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MeshObj: {fileID: 8178281097619124047}
   collider: {fileID: 8178281097619089888}
+  componentBlocks: []
   resourceManager: {fileID: 0}
   pickupSound: {fileID: 0}
   score: 0
@@ -281,6 +282,7 @@ MonoBehaviour:
   maxVolume: 0.5
   liveCam: {fileID: 8178281095927773227}
   deathCam: {fileID: 10062337630150622}
+  deathCamMount: {fileID: 7046177137682531941}
 --- !u!1 &8178281097619124041
 GameObject:
   m_ObjectHideFlags: 0
