@@ -1254,7 +1254,7 @@ PrefabInstance:
     - target: {fileID: 5990108167403365272, guid: 2efaa9ac4a016d143b64b28026e9cfbb,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5990108167403365274, guid: 2efaa9ac4a016d143b64b28026e9cfbb,
         type: 3}
@@ -1512,6 +1512,11 @@ PrefabInstance:
       propertyPath: resourceManager
       value: 
       objectReference: {fileID: 1267669156}
+    - target: {fileID: 180107410458977859, guid: 9574fa1a749387e44abdf046758443c3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9574fa1a749387e44abdf046758443c3, type: 3}
 --- !u!114 &8178281097022454074 stripped
